@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frostbite - The Premium GunZ Experience.</title>
+    <title>Frostbite - Premium GunZ: the Duel Private Server</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated background particles */
         .particles {
             position: fixed;
             top: 0;
@@ -46,7 +45,6 @@
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -71,6 +69,12 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         .logo img {
@@ -107,7 +111,6 @@
             text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
         }
 
-        /* Main content */
         main {
             margin-top: 100px;
             padding: 2rem;
@@ -126,7 +129,6 @@
             display: block;
         }
 
-        /* Hero section */
         .hero {
             text-align: center;
             padding: 4rem 0;
@@ -205,7 +207,6 @@
             box-shadow: 0 8px 30px rgba(45, 74, 114, 0.6);
         }
 
-        /* Features grid */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -264,7 +265,6 @@
             line-height: 1.6;
         }
 
-        /* Download page */
         .download-section {
             background: rgba(26, 39, 68, 0.6);
             border: 1px solid rgba(45, 74, 114, 0.5);
@@ -324,7 +324,6 @@
             color: #87ceeb;
         }
 
-        /* Footer */
         footer {
             background: rgba(10, 20, 40, 0.8);
             border-top: 1px solid rgba(45, 74, 114, 0.5);
@@ -333,7 +332,6 @@
             margin-top: 3rem;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -362,19 +360,17 @@
     </style>
 </head>
 <body>
-    <!-- Animated particles -->
     <div class="particles"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <div class="logo" onclick="showPage('home')" style="cursor: pointer;">
                 <img src="logo.png" alt="Frostbite Logo">
                 <h1>Frostbite</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
                 <li><a href="#" onclick="showPage('download')" class="nav-link">Download</a></li>
+                <li><a href="https://forums.getfrostbyte.xyz" target="_blank" class="nav-link">Forums</a></li>
             </ul>
         </div>
     </nav>
@@ -387,7 +383,7 @@
                 <div class="hero">
                     <div class="hero-content">
                         <h1>Frostbite</h1>
-                        <p>The Premium GunZ Experience.</p>
+                        <p>The Ultimate GunZ: the Duel Experience</p>
                         <a href="#" onclick="showPage('download')" class="cta-button">Download Now</a>
                     </div>
                 </div>
@@ -435,14 +431,14 @@
             <div id="download" class="page">
                 <div class="download-section">
                     <h1>Download Frostbite</h1>
-                    <p>Join us in the ultimate Gunz the Duel experience!</p>
+                    <p>Join us in the ultimate GunZ: the Duel experience!</p>
                     
                     <div style="margin: 2rem 0;">
                         <a href="#" class="download-button">
-                            📱 Download Installer
+                            💻 Download Standalone Client (Windows)
                         </a>
                         <a href="#" class="download-button">
-                            💻 Download Standalone Client (Windows)
+                            📱 Download Installer
                         </a>
                     </div>
 
@@ -453,17 +449,17 @@
                                 <strong>Minimum Requirements:</strong><br>
                                 • Windows 10/11<br>
                                 • 4GB RAM<br>
-                                • DirectX 9.0ex, Vulkan<br>
-                                • 2GB free disk space<br>
-                                • An Internet Connection
+                                • GPU that supports DirectX 9.0c, or Vulkan<br>
+                                • 1GB free disk space<br>
+                                • Broadband internet connection
                             </div>
                             <div class="requirement-item">
                                 <strong>Recommended:</strong><br>
                                 • Windows 10/11<br>
-                                • 4GB+ RAM<br>
-                                • DirectX 9.0ex, Vulkan<br>
+                                • 8GB+ RAM<br>
+                                • GTX 960 2GB<br>
                                 • 4GB+ free disk space<br>
-                                • An Internet Connection
+                                • Stable broadband connection
                             </div>
                         </div>
                     </div>
@@ -489,28 +485,23 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Frostbite Gunz Server. All rights reserved. | Built for the community, by the community.</p>
+        <p>&copy; 2025 Frostbite GunZ Server. All rights reserved. | Built for the community, by the community.</p>
     </footer>
 
     <script>
-        // Navigation functionality
         function showPage(pageId) {
-            // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
             
-            // Show selected page
             document.getElementById(pageId).classList.add('active');
             
-            // Update nav links
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
             event.target.classList.add('active');
         }
 
-        // Create animated particles
         function createParticles() {
             const particlesContainer = document.querySelector('.particles');
             
@@ -524,10 +515,8 @@
             }
         }
 
-        // Initialize particles when page loads
         window.addEventListener('load', createParticles);
 
-        // Smooth scrolling for better UX
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -540,7 +529,6 @@
             });
         });
 
-        // Add some interactive effects
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-15px) scale(1.02)';
