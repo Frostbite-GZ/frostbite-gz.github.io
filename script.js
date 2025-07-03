@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Hamburger menu toggle logic
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+        });
+    }
+
     function showPage(pageId) {
         const currentPage = document.querySelector('.page.active');
         const newPage = document.getElementById(pageId);
